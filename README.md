@@ -11,4 +11,4 @@ Thank you! Couldn't do this without your help or using your code as reference fo
 
 If you would like to <href src="https://www.paypal.me/TheAriesPlays">donate here</href> by clicking the link! I am very interested in created plugins so hopefully there will be more in the near future!
 
-Come join the <href src="https://discord.gg/KUd7uCM">Discord</href> for more content, development, and gaming!
+Come join the Click[Discord](https://discord.gg/KUD7uCM) for more content, development, and gaming!
