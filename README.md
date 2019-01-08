@@ -6,9 +6,9 @@ Just place any website on a sign in between "*" and "*" and when a player clicks
 
 Permissions -> add "signurl" to the default permission list.
 
-This plugin is created by <href src="https://github.com/AriesPlaysNation?tab=repositories">AriesPlaysNation</href> but placing credit where credit is due: <href src="https://github.com/MrKwabs">Mr.Kwabs.</href>
+This plugin is created by [AriesPlaysNation Repository[(https://github.com/AriesPlaysNation?tab=repositories) but placing credit where credit is due: <href src="https://github.com/MrKwabs">Mr.Kwabs.</href>
 Thank you! Couldn't do this without your help or using your code as reference for my first plugin!
 
-If you would like to <href src="https://www.paypal.me/TheAriesPlays">donate here</href> by clicking the link! I am very interested in created plugins so hopefully there will be more in the near future!
+If you would like to [Donate Here](https://www.paypal.me/TheAriesPlays) by clicking the link! I am very interested in created plugins so hopefully there will be more in the near future!
 
-Come join the Click[Discord](https://discord.gg/KUD7uCM) for more content, development, and gaming!
+Come join the [Discord](https://discord.gg/KUD7uCM) for more content, development, and gaming!
