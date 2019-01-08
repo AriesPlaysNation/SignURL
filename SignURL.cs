@@ -46,29 +46,37 @@ namespace SignURL
         }
 
         //assigns uCaller and Gester
-        public void OnUpdatedGesture(UnturnedPlayer uCaller, UnturnedPlayerEvents.PlayerGesture Gesture, InteractableSign Sign)
+        public void OnUpdatedGesture(UnturnedPlayer uCaller, UnturnedPlayerEvents.PlayerGesture Gesture)
         {
-
+            
             //assigns website upon punching the sign
             //attempting to convert text from sign into link to website! **Having Issues**
-            if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft && Sign.text.Contains('*') && uCaller.HasPermission("signurl"))
+            if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft  && uCaller.HasPermission("signurl"))
             {
 
+                Transform Raycast = GetRaycast(uCaller);
 
-                string description = defaultdesc;
-                //string[] url; ----> FUDGING DURR! WHY AM I DECLARING TWICE :*(
-                string url = Sign.text.Split('*', '*')[1].ToString();
-                uCaller.Player.sendBrowserRequest(description, url);
+                if (Raycast == null)
+                {
+                    return;
+                }
 
-                return;
-                
+                if (Raycast.GetComponent<InteractableSign>() != null)
+                {
+                    string description = defaultdesc;
+                    //string[] url;
+                    string url = Raycast.GetComponent<InteractableSign>().text.Split('*', '*')[1].ToString();
+                    uCaller.Player.sendBrowserRequest(description, url);
+                    return;
+                }
+                else
+                {
+                    Logger.LogError("Something went WAY wrong. Please contact me at bradbotteron13@gmail.com or on my discord!");
+                    return;
+                }
+
             }
-            else
-            {
-                Logger.LogError("Something went WAY wrong. Please contact me at bradbotteron13@gmail.com or on my discord!");
-                return;
-            }
-
+            
         }
 
         private Transform GetRaycast(UnturnedPlayer uPlayer)
