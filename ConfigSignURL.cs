@@ -7,7 +7,7 @@ using Rocket.API;
 
 namespace SignURL
 {
-    public class ConfigSendURL : IRocketPluginConfiguration
+    public class ConfigSignURL : IRocketPluginConfiguration
     {
 
         public string DefaultDesc;

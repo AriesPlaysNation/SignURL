@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignTeleporter", "SignTeleporter.csproj", "{BDA124A4-614B-4860-A5AD-B574E7453832}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignURL", "SignURL.csproj", "{BDA124A4-614B-4860-A5AD-B574E7453832}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C9FBFBC3-790F-49E2-8FE8-24B638E6ED46}
+		SolutionGuid = {6EFB359E-EE5D-4698-94E2-1C902B69CBF0}
 	EndGlobalSection
 EndGlobal
