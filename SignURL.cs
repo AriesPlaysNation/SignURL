@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json.Linq;
 using Rocket.API;
 using Rocket.Core.Plugins;
-using Rocket.Unturned.Chat;
 using Rocket.Unturned.Events;
 using Rocket.Unturned.Player;
 using SDG.Unturned;
@@ -17,7 +15,7 @@ namespace SignURL
 {
     public class SignURL : RocketPlugin<ConfigSignURL>
     {
-        private string defaultdesc;
+        public string defaultdesc;
 
         public static SignURL Instance { get; set; }
 
@@ -48,10 +46,10 @@ namespace SignURL
         //assigns uCaller and Gester
         public void OnUpdatedGesture(UnturnedPlayer uCaller, UnturnedPlayerEvents.PlayerGesture Gesture)
         {
-            
+
             //assigns website upon punching the sign
             //attempting to convert text from sign into link to website! **Having Issues**
-            if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft  && uCaller.HasPermission("signurl"))
+            if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft && uCaller.HasPermission("signurl"))
             {
 
                 Transform Raycast = GetRaycast(uCaller);
@@ -76,7 +74,7 @@ namespace SignURL
                 }
 
             }
-            
+
         }
 
         private Transform GetRaycast(UnturnedPlayer uPlayer)
