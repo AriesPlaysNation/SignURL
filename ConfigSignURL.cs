@@ -11,11 +11,14 @@ namespace SignURL
     {
 
         public string DefaultDesc;
+        public int MaxDistance;
 
         public void LoadDefaults()
         {
             DefaultDesc = "Open the url to visit the webpage";
+            MaxDistance = 5;
         }
 
     }
+    
 }

@@ -38,23 +38,25 @@ namespace SignURL
         {
 
             //Upon shutdown closes instance
-            //UnturnedPlayerEvents.OnPlayerUpdateGesture += OnUpdatedGesture; -> Not needed atm
+            //-> Not needed at the moment
+            //UnturnedPlayerEvents.OnPlayerUpdateGesture += OnUpdatedGesture;
             Instance = null;
             base.Unload();
 
         }
 
         //assigns uCaller and Gester
-        public void OnUpdatedGesture(UnturnedPlayer uCaller, UnturnedPlayerEvents.PlayerGesture Gesture, InteractableSign Sign, UnturnedPlayer uPlayer, string description)
+        public void OnUpdatedGesture(UnturnedPlayer uCaller, UnturnedPlayerEvents.PlayerGesture Gesture, InteractableSign Sign)
         {
 
             //assigns website upon punching the sign
             //attempting to convert text from sign into link to website! **Having Issues**
-            if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft && Sign.text.Contains('*') && uPlayer.HasPermission("signurl"))
+            if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft && Sign.text.Contains('*') && uCaller.HasPermission("signurl"))
             {
 
-                description = defaultdesc;
-                //string[] url; ----> FUDGING DURR! WHY AM I DECLARING TWICE :(
+
+                string description = defaultdesc;
+                //string[] url; ----> FUDGING DURR! WHY AM I DECLARING TWICE :*(
                 string url = Sign.text.Split('*', '*')[1].ToString();
                 uCaller.Player.sendBrowserRequest(description, url);
 
@@ -66,8 +68,17 @@ namespace SignURL
                 Logger.LogError("Something went WAY wrong. Please contact me at bradbotteron13@gmail.com or on my discord!");
                 return;
             }
-            
+
         }
-        
+
+        private Transform GetRaycast(UnturnedPlayer uPlayer)
+        {
+            if (Physics.Raycast(uPlayer.Player.look.aim.position, uPlayer.Player.look.aim.forward, out RaycastHit RayHit, Instance.Configuration.Instance.MaxDistance, RayMasks.BARRICADE_INTERACT))
+            {
+                return RayHit.transform;
+            }
+            return null;
+        }
+
     }
 }
