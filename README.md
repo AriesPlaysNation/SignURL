@@ -11,4 +11,4 @@ Thank you! Couldn't do this without your help or using your code as reference fo
 
 If you would like to [Donate Here](https://www.paypal.me/TheAriesPlays) by clicking the link! I am very interested in created plugins so hopefully there will be more in the near future!
 
-Come join the [Discord](https://discord.gg/KUD7uCM) for more content, development, and gaming!
+Come join the [Discord](https://discord.gg/KUD7uCM) for more content, development, and gaming! 
