@@ -27,6 +27,8 @@ namespace SignURL
 
             Instance = this;
 
+            UnturnedPlayerEvents.OnPlayerUpdateGesture += OnUpdatedGesture;
+
             Logger.LogWarning("\n Loading SignURL, made by AriesPlaysNation, supported and supplied by Mr.Kwabs!");
             Logger.LogWarning($"\n Default URL Description: {Instance.Configuration.Instance.DefaultDesc}");
             Logger.LogWarning("\n Successfully loaded SignURL, made by AriesPlaysNation, supported and supplied by Mr.Kwabs!");
@@ -36,8 +38,8 @@ namespace SignURL
         {
 
             //Upon shutdown closes instance
-            //-> Not needed at the moment
-            //UnturnedPlayerEvents.OnPlayerUpdateGesture += OnUpdatedGesture;
+            
+            UnturnedPlayerEvents.OnPlayerUpdateGesture -= OnUpdatedGesture;
             Instance = null;
             base.Unload();
 
@@ -56,6 +58,7 @@ namespace SignURL
 
                 if (Raycast == null)
                 {
+                    Logger.LogError("RayCast returned null");
                     return;
                 }
 
