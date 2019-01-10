@@ -15,8 +15,7 @@ namespace SignURL
 {
     public class SignURL : RocketPlugin<ConfigSignURL>
     {
-        public string defaultdesc;
-
+        
         public static SignURL Instance { get; set; }
 
         protected override void Load()
@@ -51,7 +50,7 @@ namespace SignURL
 
             //assigns website upon punching the sign
             //attempting to convert text from sign into link to website! **Having Issues**
-            if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft && uCaller.HasPermission("signurl"))
+            if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft)
             {
 
                 Transform Raycast = GetRaycast(uCaller);
@@ -64,15 +63,11 @@ namespace SignURL
 
                 if (Raycast.GetComponent<InteractableSign>() != null)
                 {
-                    string description = defaultdesc;
-                    //string[] url;
-                    string url = Raycast.GetComponent<InteractableSign>().text.Split('*', '*')[1].ToString();
-                    uCaller.Player.sendBrowserRequest(description, url);
-                    return;
+                    ManageSign(uCaller, Raycast.GetComponent<InteractableSign>());
                 }
                 else
                 {
-                    Logger.LogError("Something went WAY wrong. Please contact me at bradbotteron13@gmail.com or on my discord!");
+                    Logger.LogError("No sign in front of user. Please Contact me at bradbotteron13@gmail.com or my discord for help!");
                     return;
                 }
 
@@ -80,14 +75,24 @@ namespace SignURL
 
         }
 
-        private Transform GetRaycast(UnturnedPlayer uPlayer)
+        private void ManageSign(UnturnedPlayer uPlayer, InteractableSign Sign)
         {
-            if (Physics.Raycast(uPlayer.Player.look.aim.position, uPlayer.Player.look.aim.forward, out RaycastHit RayHit, Instance.Configuration.Instance.MaxDistance, RayMasks.BARRICADE_INTERACT))
-            {
-                return RayHit.transform;
-            }
-            return null;
+
+            if (Sign.text == null || Sign.text == "" || !Sign.text.Contains("*") || !uPlayer.HasPermission("signurl")) { return; }
+
+            string URL = Sign.text.Split('*', '*')[1].ToString();
+
+            uPlayer.Player.sendBrowserRequest(Instance.Configuration.Instance.DefaultDesc, URL);
         }
+            private Transform GetRaycast(UnturnedPlayer uPlayer)
+            {
+                if (Physics.Raycast(uPlayer.Player.look.aim.position, uPlayer.Player.look.aim.forward, out RaycastHit RayHit, Instance.Configuration.Instance.MaxDistance, RayMasks.BARRICADE_INTERACT))
+                {
+                    return RayHit.transform;
+                }
+                return null;
+            }
+        
 
     }
 }
