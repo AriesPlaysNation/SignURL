@@ -14,3 +14,8 @@ If you would like to [Donate Here](https://www.paypal.me/TheAriesPlays) by click
 Come join the [Discord](https://discord.gg/KUd7uCM) for more content, development, and gaming! Also use this link for any suggestions :)
 
 Even though the plugin is finished, I'll be adding to it at a later time!
+
+Known Issues:
+(Non-Fatal Errors)
+- Error in log when punching near and not near a sign.
+- Error in log when someone dies.
