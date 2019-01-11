@@ -49,7 +49,11 @@ namespace SignURL
         {
 
             //assigns website upon punching the sign
-            //attempting to convert text from sign into link to website! **Having Issues**
+            //attempting to convert text from sign into link to website! 
+            //known issues:
+            //      Always works when you left punch whether your next to a sign or not.
+            //      If next to a sign error 1
+            //      If not next to a sign error 2
             if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft)
             {
 
@@ -57,6 +61,7 @@ namespace SignURL
 
                 if (Raycast == null)
                 {
+                    // error 1
                     Logger.LogError("RayCast returned null");
                     return;
                 }
@@ -67,6 +72,7 @@ namespace SignURL
                 }
                 else
                 {
+                    //error 2
                     Logger.LogError("No sign in front of user. Please Contact me at bradbotteron13@gmail.com or my discord for help!");
                     return;
                 }

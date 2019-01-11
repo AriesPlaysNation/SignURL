@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignURL", "SignURL\SignURL.csproj", "{DF17FCF9-EB4E-4659-9FB0-E194992A8CF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignURL", "SignURL.csproj", "{DF17FCF9-EB4E-4659-9FB0-E194992A8CF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {67C0A245-E008-4A0F-9768-781AC55514CB}
+		SolutionGuid = {2319D9E2-3624-4E6D-B9D6-FB1CBA20531D}
 	EndGlobalSection
 EndGlobal
