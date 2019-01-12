@@ -54,10 +54,12 @@ namespace SignURL
             //      Always works when you left punch whether your next to a sign or not.
             //      If next to a sign error 1
             //      If not next to a sign error 2
-            if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft)
-            {
+            Transform Raycast = GetRaycast(uCaller);
 
-                Transform Raycast = GetRaycast(uCaller);
+            if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft && Raycast != null)
+            {
+                
+
 
                 if (Raycast == null)
                 {
