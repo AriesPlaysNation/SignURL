@@ -52,14 +52,14 @@ namespace SignURL
             //attempting to convert text from sign into link to website! 
             //known issues:
             //      Always works when you left punch whether your next to a sign or not.
-            //      If next to a sign error 1
-            //      If not next to a sign error 2
+            //      If next to a sign error 1 ----> Fixed!
+            //      If not next to a sign error 2 -----> As long as your punching an object you still get error 2
+
             Transform Raycast = GetRaycast(uCaller);
 
             if (Gesture == UnturnedPlayerEvents.PlayerGesture.PunchLeft && Raycast != null)
             {
                 
-
 
                 if (Raycast == null)
                 {
